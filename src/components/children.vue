@@ -42,7 +42,7 @@ import { computed,defineProps ,ref } from 'vue';
 	watchEffect(() => {
 		console.log(state.obj)
 		console.log('state.obj改变-watchEffect')
-	},{deep:true})
+	}) //{deep:true} 第二个参数是否深度监听
 	
 	let num1 = ref(0)
 	let num2 = ref(0)
@@ -55,7 +55,7 @@ import { computed,defineProps ,ref } from 'vue';
 	watchEffect(() => {
 		console.log(num1)
 		console.log('num1改变-watchEffect')
-	})
+	})  //第二个参数 {immediate:true} 页面初始化也会执行一次
 	
 	watchEffect(() => {
 		console.log(num2)

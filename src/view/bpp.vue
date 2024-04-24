@@ -2,13 +2,17 @@
 	<div>我是B页面</div>
 	<bppChildren :value="value"></bppChildren>
 	<button @click="changeValue">修改</button>
+	<p>路由守卫拿到的值{{data}}</p>
 </template>
 
 <script>
 	import bppChildren from '@/components/bppChildren.vue'
 	export default{
+		props: ['data'],
 		methods:{
 			changeValue(){
+				console.log(this.$route)
+				console.log(this.$route.params)
 				this.value = '修改-传给子组件的值'
 			}
 		},

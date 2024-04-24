@@ -2,7 +2,7 @@
 	<div>
 		<!-- <input type="text" v-model="name" /> -->
 		<p @click="changeName('父组件修改后的值')">我是首页-{{name}}</p>
-		<children :value="name" :changeName="changeName" @childrenFn="changeName"></children>
+		<children :value="name" ></children>
 	</div>
 </template>
 
