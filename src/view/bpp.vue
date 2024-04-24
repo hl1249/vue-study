@@ -1,8 +1,50 @@
 <template>
 	<div>我是B页面</div>
+	<bppChildren :value="value"></bppChildren>
+	<button @click="changeValue">修改</button>
 </template>
 
 <script>
+	import bppChildren from '@/components/bppChildren.vue'
+	export default{
+		methods:{
+			changeValue(){
+				this.value = '修改-传给子组件的值'
+			}
+		},
+		data(){
+			return{
+				value:"传给子组件的值"
+			}
+		},
+		components:{
+			bppChildren
+		},
+		beforeCreate() {
+			console.log('B-beforeCreate')
+		},
+		created() {
+			console.log('B-created')
+		},
+		beforeMount() {
+			console.log('B-beforeMount')
+		},
+		mounted() {
+			console.log('B-mounted')
+		},
+		beforeUpdate() {
+			console.log('B-beforeUpdate')
+		},
+		updated() {
+			console.log('B-updated')
+		},
+		beforeDestroy() {
+			console.log('B-beforeDestroy')
+		},
+		destroyed() {
+			console.log('B-destroyed')
+		}
+	}
 </script>
 
 <style>
