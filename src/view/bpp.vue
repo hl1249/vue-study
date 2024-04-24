@@ -12,6 +12,7 @@
 		methods:{
 			changeValue(){
 				console.log(this.$route)
+				//'路由参数 query 和 params'区别是一个附加在url 另一个是存在内存
 				console.log(this.$route.params)
 				this.value = '修改-传给子组件的值'
 			}
