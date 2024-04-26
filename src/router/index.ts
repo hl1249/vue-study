@@ -4,14 +4,20 @@ import Home from '@/view/home.vue'
 
 const routes = [
 	{
+		path:"/",
+		redirect:{
+			name:"home"
+		}
+	},
+	{
 		path: "/home",
-		name: "首页",
+		name: "home",
 		component: Home
 	},
 	{
 		path: "/bpp",
-		name: "B页面",
-		beforeEnter: (to, from, next:any) => {
+		name: "bpp",
+		beforeEnter: (to:any, from, next:any) => {
 			const data = { message: 'Hello from beforeEnter!' };
 			// 模拟异步操作
 			to.params = {
