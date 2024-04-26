@@ -7,6 +7,7 @@
 
 <script>
 	import bppChildren from '@/components/bppChildren.vue'
+	import bus from '@/utils/bus'
 	export default{
 		props: ['data'],
 		methods:{
@@ -26,6 +27,7 @@
 			bppChildren
 		},
 		beforeCreate() {
+			bus.set("bus","总线数据的值-修改")
 			console.log('B-beforeCreate')
 		},
 		created() {

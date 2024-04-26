@@ -7,6 +7,10 @@
 </template>
 
 <script setup>
+	
+	import eventEmitter from '@/utils/eventEmitter'
+	import bus from '@/utils/bus'
+	
 	import {ref} from 'vue'
 	import children from '@/components/children.vue'
 	
@@ -15,6 +19,10 @@
 	const changeName = (value = '修改后的芜湖') => {
 		name.value  = value
 	}
+	
+	eventEmitter.emit('event')
+	const data = bus.get("bus")
+	console.warn(data)
 </script>
 
 <style>
